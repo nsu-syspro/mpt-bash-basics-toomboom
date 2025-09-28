@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $# -lt 2 ]]; then
+    echo "usage: $0 <suffix> <file>..."
+    exit 1
+fi
+
+suffix="$1"
+shift
+for file in "$@"; do
+    mv "$file" "$file$suffix"
+done
